@@ -1,7 +1,7 @@
 # SQLITE with QT
 Pequena aplicação para entender os conceitos de sqlite com o QT
 
-# Motivacao
+# Motivação
 Aprofundar mais sobre QT e seus componentes disponiveis.
 
 ## Feature
