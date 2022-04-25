@@ -36,11 +36,10 @@ QT       += core gui  sql
 
 
 ## 
-- Para insercao de dados no banco preciso usar os comandos tradicionais dos bancos que implementa sql, neste caso o INSERT INTO
-- Precisa a coluna ter sido criada antes do banco,para  funcionar normalmente,caso a contrario nao conseguira inserir
-- Apos ter criado o comanodo, simplesmente preparo a string escrita com a palavra reservada prepare(). 
-- Preapre e o comando sql que vai conveter nossa string em um comando sql propriamente dita
-
+- Para inserção de dados no banco preciso usar os comandos tradicionais dos bancos que implementa sql, neste caso o INSERT INTO
+- Precisa a coluna ter sido criada antes do banco,para  funcionar normalmente, caso a contrário não conseguira inserir
+- Apos ter criado o comando, simplesmente preparo a string escrita com a palavra reservada prepare(). 
+- Prepare e o comando sql que vai converter nossa string em um comando sql propriamente dita
 
 
 
@@ -72,8 +71,8 @@ QT       += core gui  sql
 - O componente espera que setamos a quantidade de coluna, inserimos a quantidade de linhas e por fim os itens
 - Para consultar o banco a lógica e mesma de inserir, escrevo o comando é preparo  query
 - Apos executar a query, tem um comando next() do sql, usei o while, enquanto for verdadeiro o next permanece no laço
-- SetItem do componente QTableWidget aguarda primeiro a row, depois a coluna da tabela a ser exibida do banco. Ou seja, coluna 0 da tabela aparecera 1 na tela, porque começa no index 0
-- Para os valores, para isto usei  clase QTableWidgetItem no construtor desta classe  passei os valores da table do banco de dados.
+- SetItem do componente QTableWidget aguarda primeiro a row, depois a coluna da tabela a ser exibida, então  coluna 0 da tabela, sera exibido na tela 1, porque começa no index 0
+- Por fim,para os valores,  usei  clase QTableWidgetItem no construtor desta classe  passei os valores da tabela do banco de dados.
 - No caso no banco de dados estou consultando a coluna 1 e a coluna 2
 - Banco de dados a coluna 1 representa o first name, 2 representa o second name
 - Apos tudo pronto eu estilizo de forma dinâmica as colunas com  setRowHeight
@@ -92,7 +91,9 @@ if(query.exec()){
    while(query.next()){
       ui->table_list->insertRow(row);
 
-      //row do banco de dados, coluna da tabale do tabe list( culna 0 corresponde a primerioa coluna 1 correponde ao 2 coluna), a classe  widget,value da couluna no banco(id,name ou second_name)
+      //row do banco de dados, coluna da tabela da QTableWidget( culna 0 corresponde a primeira coluna 1,e 1 correponde  2 coluna), os valores QTableWidgetItem(value da couluna do banco(id,name ou second_name))
+      //estou pegando o valor da primeira coluna no banco em QTableWidgetItem
+      //e pegando valor da segunda coluna no banco em QtableWidgetItem
       ui->table_list->setItem(row,0,new QTableWidgetItem( query.value(1).toString()));
       ui->table_list->setItem(row,1,new QTableWidgetItem(query.value(2).toString()));
       ui->table_list->setRowHeight(row,30); //parte de estilo da coluna
