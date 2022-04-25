@@ -107,7 +107,9 @@ if(query.exec()){
 ## ScreenShoot
 
 
-
+![nameSe.jpeg](https://github.com/kenjimaeda54/sqlite-QT/blob/master/nameSe.jpeg)
+![dataINser.jpeg](https://github.com/kenjimaeda54/sqlite-QT/blob/master/dataINser.jpeg)
+![sucess.jpeg](https://github.com/kenjimaeda54/sqlite-QT/blob/master/sucess.jpeg)
 
 
 
